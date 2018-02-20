@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.facechat.facechatbackend.test.ForumDAOTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 1.346 sec

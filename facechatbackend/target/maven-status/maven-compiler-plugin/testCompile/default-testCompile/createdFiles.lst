@@ -1,0 +1,6 @@
+com\facechat\facechatbackend\test\UserDAOTest.class
+com\facechat\facechatbackend\test\ForumDAOTest.class
+com\facechat\facechatbackend\test\JobDAOTest.class
+com\facechat\facechatbackend\test\ForumCommentsDAOTest.class
+com\facechat\facechatbackend\test\BlogDAOTest.class
+com\facechat\facechatbackend\test\FriendDAOTest.class
