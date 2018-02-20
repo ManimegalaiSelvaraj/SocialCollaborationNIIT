@@ -1,0 +1,54 @@
+<div class="container" ng-controller="FriendController"> 
+    <hr>
+   <h2>Job</h2>
+    <span class="clearfix"></span>
+    <hr>
+      <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Friend Name</th>
+        <th colspan="2">operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="friend in frienddata">
+        <td>{{$index+1}}</td>
+        <td>{{friend.friendname}}</td>
+         
+         <td>
+        <button type="button" class="btn btn-info" ng-click="acceptrequest(friend.friendId)">Accept</button>
+     </td>
+     <td>
+        <button type="button" class="btn btn-danger" ng-click="deleterequest(friend.friendId)">Delete</button>
+     </td>
+      </tr>
+      
+    </tbody>
+  </table> 
+  
+ <button type="button" class="btn btn-info" ng-click="friends()">Friends List</button>
+    <span class="clearfix"></span>
+    <hr>
+      <table class="table table-striped">
+    <thead>
+      <tr>
+          <th>Index</th>
+        <th>Friend Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="friend in frienddata1">
+        <td>{{$index+1}}</td>
+        <td>{{friend.friendname}}</td>
+         
+         
+        
+      </tr>
+      
+    </tbody>
+  </table> 
+  
+  
+   
+    </div>

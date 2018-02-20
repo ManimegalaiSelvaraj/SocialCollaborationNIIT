@@ -1,0 +1,40 @@
+\<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+<center><span class="label label-primary">Admin Page</span></center>
+
+<div ng-controller="adminblogcontroller">
+<form id="adminblogform" method="post">
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Blog Name</th>
+      <th>Blog Content</th>
+      <th colspan="2">Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="blog in blogdata">
+     <td>{{blog.blogName}}</td>
+      <td>{{blog.blogContent}}</td>
+
+<td ng-show="blog.status=='N'">
+<input type="submit" class="btn btn-success" value="Approve Blog" ng-click="approveblog(blog.blogId)"/></td>
+
+<td ng-show="blog.status=='A'">
+<input type="submit" class="btn btn-danger" value="Reject Blog" ng-click="rejectblog(blog.blogId)"/></td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- <div ng-controller="chatController">
+	<form ng-submit="addMessage()" name="chatMsg">
+
+	<input type="text" ng-model="message"/>
+	<span class="count" ng-bind="max - message.length">140</span>
+	<button ng-disabled="message.length>140 ||message.length==0">Send</button>
+	
+	</form>
+
+	<p ng-repeat="message in messages|orderBy:'time':true">
+		
+		<time>{{message.time | date: 'HH:mm'}}</time>
+		<span> {{message.message}}</span>
+	</p>
+</div> -->
+
+<html>
+
+<body>
+<div ng-Controller="chatController" class="card my-4">
+	<h5 class="card-header">Write Something here...</h5>
+	<div class="card-body">
+		<form ng-submit="addMessage()" name="chatMsg">
+			<div class="form-group">
+				<textarea class="form-control" ng-model="message" rows="3"></textarea>
+			</div>
+			<span class="count" ng-bind=" max - message.length">140</span>
+			<button ng-disabled=" message.length>140 ||message.length==0"
+				class="btn btn-primary">Send</button>
+		</form>
+		<p ng-repeat="message in messages|orderBy:'time':true">
+
+			<time>{{message.time | date: 'HH:mm'}}</time>
+			<span> {{message.message}}</span>
+		</p>
+	</div>
+</div>
+</body>
+</html>

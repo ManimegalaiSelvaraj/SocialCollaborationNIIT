@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Social Collaboration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet"href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />    
+	   
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.1/sockjs.min.js"></script>
+	
+	<script src="RouteConfig.js"></script>
+	<script src="Blog/BlogController.js"></script>
+	<script src="Blog/AdminBlogController.js"></script>
+	<script src="User/UserController.js"></script>
+    <script src="Forum/ForumController.js"></script>
+    <script src="Job/JobController.js"></script>
+    <script src="Friend/FriendController.js"></script>
+      <script src="Chat/chatController.js"></script>
+    
+    
+    <style type="text/css">
+    footer{
+   background-color: #424558;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    text-align: center;
+    color: #CCC;
+}
+footer p {
+    padding: 10.5px;
+    margin: 0px;
+    line-height: 100%;
+}
+    </style>
+</head>
+
+<body ng-app="myApp">
+	 <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#/">Social Media</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <!-- <li class="active"><a href="#">Home</a></li> -->
+       
+        <li><a href="#/">Home</a></li>
+        <li><a href="#/Blog">Blog</a></li>
+        <li><a href="#/Forum">Forum</a></li>
+        
+        
+        <li ng-show="currentUser.role=='ADMIN'"><a href="#/AdminBlog">Admin Blog</a></li>
+        <li ng-show="currentUser.role=='ADMIN'"><a href="#/Job">Add Job</a></li>
+        
+        
+        <li><a href="#/Showjob">Show Job</a></li>
+        
+       <li ng-show="currentUser.role=='USER'"><a href="#/Friend">Friends</a></li>
+        <li ng-show="currentUser.role=='USER'"><a href="#/UserList">User List</a></li>
+       <li ng-show="currentUser.role=='USER'"><a href="#/Chat"><span class="glyphicon glyphicon-comment"></span>Chating</a></li>    
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="currentUser.role=='USER' || currentUser.role=='ADMIN'"><a href="#/Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li ng-hide="currentUser.role=='USER' || currentUser.role=='ADMIN'"><a href="#/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      
+   </ul>
+     
+     
+     <div ng-show="currentUser.role=='USER' || currentUser.role=='ADMIN'">
+    <div class="nav navbar-nav navbar-right" ng-show="currentUser.username!=''">
+    <font color="white" face="calibri" size="4">welcome:{{currentUser.username}}
+    
+    <form><input type="submit" value="Logout" ng-click="logout()"/></form>
+    </font>
+    <a href="#/ProfilePicture">ProfilePicture</a>
+    </div>
+    </div>
+  </div>
+  </div>
+</nav> 
+
+	<div id="main">
+
+		<!-- angular templating -->
+		<!-- this is where content will be injected -->
+		<div ng-view></div>
+
+	</div>
+	
+	<footer>
+        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#">FACECHAT</a>, All rights reserved 2016-2017.</p>
+    </footer>
+</body>
+</html>

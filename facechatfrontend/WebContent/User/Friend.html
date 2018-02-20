@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+<!-- <div ng-controller="usercontroller">
+<table>
+<tr><td>Friend List</td></tr>
+<tr ng-repeat="user in allusers">
+<td>{{user.username}}</td>
+<td>{{user.firstname}}</td>
+<td ng-show="user.isOnline=='Y'">Online</td>
+<td ng-show="user.isOnline=='N'">Offline</td>
+</tr>
+</table>
+</div> -->
+
+<div ng-controller="usercontroller">
+<div class="container">
+<h1>Friend lists..<small>{{currentUser.username}}</small></h1> 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Online/Offline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in allusers">
+      <th scope="row">1</th>
+      <td>{{user.username}}</td>
+      <td ng-show="user.isOnline=='Y'">Online</td>
+      <td ng-show="user.isOnline=='N'">Offline</td>
+    </tr>
+   
+  </tbody>
+</table>
+</div></div>
+</body>
+</html>

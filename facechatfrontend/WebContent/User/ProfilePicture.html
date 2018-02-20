@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- <div ng-controller="usercontroller"> -->
+<!-- <div class="form group"> -->
+<form enctype="multipart/form-data" method="post" action="http://localhost:8080/fcmiddleware/ProfilePictureUpload">
+<table class="responsive-table" width="100%">
+	<tr>
+<td><input type="hidden" name="username" id="username" value="{{currentUser.username}}"></td>
+			</tr>
+			
+			<tr><td><input type="file" name="file" id="file" /></td>
+			</tr>
+			
+			<tr>
+			<td><input type="submit" value="upload"></td>
+			</tr>
+</table>
+</form>
+
+<!-- </div> -->
+
+<!-- </div> -->
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+body
+{
+	background:black;
+}
+</style>
+<link rel="stylesheet"href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body class="p-3 mb-2 bg-info">
+	<div ng-controller="jobController">
+		<h1>Jobs List.........<small>Here You can get your dream job</small></h1>
+		<br />
+		<div class="container">
+		<table class="table" align="center" width="150%" border=1>
+			<tr class="success">
+				<td>Job Id</td>
+				<td>Job Profile</td>
+				<td>Job Qualification</td>
+				<td>Job PoastedDate</td>
+				<td colspan="2">Job Apply/Delete</td>
+			</tr>
+			<tr class="success" ng-repeat="job in jobList">
+				<td>{{job.jobId}}</td>
+				<td>{{job.status}}</td>                 	
+                <td>{{job.qualification}}</td>                                                    	
+                <td>{{job.postdate}}</td>                            
+                <td><a href="Job/applyjob.html"><input type="submit" class="btn btn-primary"  Value="Apply Job" ng-click="appllyJob(job.jobId)"/></a></td>
+                <td ng-show="currentUser.role=='ADMIN'"><input type="submit"  class="btn btn-danger" Value="Delet Job"  class="glyphicon glyphicon-trash" ng-click="deleteJob(job.jobId)"/></td>
+			</tr>
+
+		</table align="center" width="100%" border=1>
+	</div>
+</body>
+</html>

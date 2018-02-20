@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet"href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style>
+/* body
+{
+	background:black;
+} */
+input[type=text], select, textarea 
+{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit] 
+{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover 
+{
+    background-color: #1E90FF;
+}
+.container 
+{
+    border-radius: 5px;
+    background-color: #1E90FF;
+    padding: 20px;
+}
+</style>
+</head>
+<body class="p-3 mb-2 bg-secondary">
+
+<center>
+	<b font-size="6">Blog Page</b>
+</center>
+
+<div ng-controller="BlogController">
+
+	
+
+ <div class="container">
+  <form id="blogform" data-ng-submit="addBlog()" method="post">
+    <label>Blog Name</label>
+    <input type="text"  name="blogName" data-ng-model="blog.blogName" placeholder="Enter Blog name.."/>
+
+    
+
+  <label>Blog Content</label>
+    <textarea id="subject" name="blogContent" data-ng-model="blog.blogContent"  placeholder="Write BlogContent.." style="height:100px"/></textarea>
+
+    <input type="submit" value="Insert Blog" >
+  </form>
+</div> 
+<br/>
+
+
+
+
+	<table align="center" width="87%" border=1>
+		
+		<tr bgcolor="orange">
+			<td>Blog Name</td>
+			<td>Blog Content</td>
+			<td>Likes</td>
+			<td colspan="2">Operations</td>
+		</tr>
+		<tr bgcolor="#1E90FF" ng-repeat="blog in blogdata">
+			<td>{{blog.blogName}}</td>
+			<td>{{blog.blogContent}}</td>
+			 <td>{{blog.likes}}<input type="submit" value="Like" ng-click="likeBlog(blog.blogId)" class="btn btn-primary btn-sm"/></td>
+			<td><input type="submit" class="btn btn-primary btn-sm" value=" Delete Blog" ng-click="deleteBlog(blog.blogId)"></td>
+<!-- <td><input type="submit" value=" Edit" ng-click="editBlog(blog.blogId)"></td> --></tr>
+
+	</table>
+</div>
+</body>
+</html>

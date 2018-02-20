@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div ng-controller="FriendController">
+<form id="friendrequestId" method="post">
+<table>
+<tr>
+<td>Friend Name</td>
+<td> Status</td>
+</tr>
+<tr ng-repeat="friend in allFriendRequest">
+<td>{{friend.friendname}}</td>
+<td>{{friend.status}}</td>
+<td ng-show="friend.status='A'"><input type="submit" value="Reject" ng-click="reject(friend.friendId)"></td>
+<td ng-show="friend.status='R'"><input type="submit" value="Approve" ng-click="approve(friend.friendId)"></td>
+</table>
+
+
+</form>
+</div>
+</body>
+</html>

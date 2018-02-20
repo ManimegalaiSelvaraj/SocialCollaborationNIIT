@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<center>
+	<h1 class="text text-warning">Forum Page<h1>
+</center>
+<!-- <div ng-controller="forumController">
+	<form id="forumform" data-ng-submit="insertforum()" method="post">
+		<table align="center" width="100%" border=1>
+			<tr>
+				<td>Forum Name</td>
+				<td><input type="text" name="forumName" data-ng-model="forum.forumName"/></td>
+			</tr>
+			<tr>
+				<td>Forum Content</td>
+				<td><textarea cols="30" row="10" name="forumContent" data-ng-model="forum.forumContent" /></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Insert forum" ></center></td>
+		</table>
+	</form>
+<br/>
+	<table align="center" width="100%" border=1>
+		
+		<tr bgcolor="orange">
+			<td>forum Name</td>
+			<td>forum Content</td>
+			
+		</tr>
+		<tr bgcolor="cyan" ng-repeat="forum in forumdata">
+			<td>{{forum.forumName}}</td>
+			<td>{{forum.forumContent}}</td>
+			<td colspan="2"><center><input type="submit" value=" Delete forum" ng-click="deleteforum(forum.forumId)"></center>
+		</tr>
+	</table>
+</div>
+ -->
+ 
+ 
+ <div ng-controller="forumController">
+
+	<form id="forumform" data-ng-submit="insertforum()" method="post">
+		<table align="center" width="100%" border=1>
+			<tr>
+				<th>Forum Name</th>
+				<td><input type="text" name="forumName" data-ng-model="forum.forumName"/></td>
+			</tr>
+			<tr>
+				<th>Forum Content</th>
+				<td><textarea cols="30" row="10" name="forumContent" data-ng-model="forum.forumContent" /></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit"  class="btn btn-success" value="Insert forum" ></center></td>
+		</table>
+	</form>
+
+<br/>
+	<table class="table" align="center" width="150%" border=1>
+			<tr class="success">
+				<th>Forum Name</th>
+			<th>Forum Content</th>
+			<th>Operations</th>
+			</tr>
+			<tr class="success" ng-repeat="forum in forumdata"">
+				                           	
+                <td>{{forum.forumName}}</td>
+			<td>{{forum.forumContent}}</td>
+			<td colspan="2"><center><input type="submit" class="btn btn-danger" value=" Delete forum" ng-click="deleteforum(forum.forumId)"></center>
+		</tr>
+		</table>
+		</div>
+</div>
+ 
+ 
+</body>
+</html>
